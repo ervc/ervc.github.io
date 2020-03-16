@@ -2,7 +2,7 @@ let resetUp, resetDown;
 let rackUp, rackDown;
 
 function setup() {
-  createCanvas(350, 700);
+  createCanvas(300, 600);
   
   //rack pointing down
   rackDown = new fullRack(width/4,10,width/2,'down');
