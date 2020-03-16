@@ -89,7 +89,7 @@ class fullRack {
     }
   }
 
-  madeCup(i) {
+  clickOnCup(i) {
     let cup = this.cups[i];
     if (sqrt(sq(mouseX - cup.x) + sq(mouseY - cup.y)) > cup.rad) {
       return false;
@@ -97,9 +97,19 @@ class fullRack {
       return true;
     }
   }
+  
+  beerInCup(i) {
+    let cup = this.cups[i];
+    return cup.full;
+  }
 
   drinkCup(i) {
     let cup = this.cups[i];
     cup.empty();
+  }
+  
+  fillCup(i) {
+    let cup = this.cups[i];
+    cup.refill();
   }
 }
