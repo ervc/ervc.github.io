@@ -1,11 +1,12 @@
 class Cup {
   constructor(x, y, r, f) {
-    this.x = x;
-    this.y = y;
-    this.rad = r;
-    this.full = f
+    this.x = x; //center x
+    this.y = y; //center y
+    this.rad = r; //cup radius
+    this.full = f; //is there beer in the cup
   }
 
+  //empty or fill cup with beer
   empty() {
     this.full = false;
   }

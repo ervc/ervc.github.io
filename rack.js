@@ -7,7 +7,7 @@ class fullRack {
     this.cups = [];
 
     let rad = this.len / 8;
-
+    //arrange cups for upward pointing or downward pointing racks
     if (this.dir == "down") {
       //bottom
       for (let i = 0; i < 4; i++) {
@@ -75,6 +75,7 @@ class fullRack {
     }
   }
 
+  //display all 10 cups
   rackEm() {
     for (let i = 0; i < 10; i++) {
       let cup = this.cups[i];
@@ -82,6 +83,7 @@ class fullRack {
     }
   }
 
+  //fill all cups with beer
   fillRack() {
     for (let i = 0; i < 10; i++) {
       let cup = this.cups[i];
@@ -89,6 +91,7 @@ class fullRack {
     }
   }
 
+  //check if mouse is on a cup
   clickOnCup(i) {
     let cup = this.cups[i];
     if (sqrt(sq(mouseX - cup.x) + sq(mouseY - cup.y)) > cup.rad) {
@@ -98,16 +101,19 @@ class fullRack {
     }
   }
   
+  //check if there is beer in the cup
   beerInCup(i) {
     let cup = this.cups[i];
     return cup.full;
   }
 
+  //drink the beer from the cup
   drinkCup(i) {
     let cup = this.cups[i];
     cup.empty();
   }
   
+  //pour beer in the cup
   fillCup(i) {
     let cup = this.cups[i];
     cup.refill();

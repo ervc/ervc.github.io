@@ -12,7 +12,6 @@ function setup() {
   //reset buttons
   resetUp = createButton("Refill All");
   resetUp.position(width-63,height-21);
-  //resetUp.style('font-size','20px');
   resetUp.mousePressed(fillUp);
   resetDown = createButton("Refill All");
   resetDown.position(2,2);
@@ -28,6 +27,7 @@ function draw() {
 }
 
 //click on cups to drink!
+//click on empty cups to fill them
 function touchStarted() {
   for (let i = 0; i<10; i++) {
     let onCupUp = rackUp.clickOnCup(i);
