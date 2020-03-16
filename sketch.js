@@ -27,7 +27,7 @@ function draw() {
 }
 
 //click on cups to drink!
-function mouseClicked() {
+function touchStarted() {
   for (let i = 0; i<10; i++) {
     let splashUp = rackUp.madeCup(i);
     if (splashUp) {
