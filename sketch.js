@@ -35,7 +35,7 @@ function setup() {
   
   //Team A input
   inputA = createInput('Team Name A');
-  inputA.position(315,10);
+  inputA.position(table.x+15,10);
   inputA.size(216);
   inputA.style('font-size','24px');
   
@@ -58,7 +58,7 @@ function setup() {
   
   //Team B input
   inputB = createInput('Team Name B');
-  inputB.position(315,height-100);
+  inputB.position(table.x+15,height-100);
   inputB.size(216);
   inputB.style('font-size','24px');
   
