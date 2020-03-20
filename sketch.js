@@ -37,7 +37,7 @@ var pickFirst = {
 let readyToPlay = false;
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(800, 800);
   
   table.width = width/2;
   table.height = height;
