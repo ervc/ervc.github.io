@@ -121,7 +121,7 @@ function IOSetup() {
   inputs.submitUp.mousePressed(saveUp);
   
   inputs.teamDown = createInput('Team Name B');
-  inputs.teamDown.position(315,height-100);
+  inputs.teamDown.position(table.width+10,height-100);
   inputs.teamDown.size(216);
   inputs.teamDown.style('font-size','24px');
   
