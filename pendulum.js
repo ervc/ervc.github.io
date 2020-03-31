@@ -32,11 +32,11 @@ class pendulum {
     let fact = TWO_PI / T;
     let dampfact = damping
     let damp = dampfact * this.vel;
-    let acc = -this.initAngle * fact * fact * this.angle - damp;
+    let acc = -fact * fact * this.angle - damp;
     this.vel += acc * dt;
     this.angle += this.vel * dt;
     
-    let dcrit = 3 * this.initAngle * fact;
+    let dcrit = 2 * fact;
     let zeta = dampfact / dcrit
     //print(dcrit);
     return zeta
@@ -44,5 +44,6 @@ class pendulum {
   
   setAngle() {
     this.angle = this.initAngle;
+    this.vel = 0;
   }
 }
