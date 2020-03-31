@@ -7,6 +7,7 @@ class pendulum {
     this.angle = this.initAngle;
     this.vel = 0;
     this.color=color;
+    this.grav = 2000;
   }
   
   show() {
@@ -26,7 +27,7 @@ class pendulum {
   }
   
   update(damping) {
-    let g = 10000;
+    let g = this.grav;
     let dt = 0.02;
     let T = TWO_PI * sqrt(this.length / g);
     let fact = TWO_PI / T;
@@ -35,11 +36,6 @@ class pendulum {
     let acc = -fact * fact * this.angle - damp;
     this.vel += acc * dt;
     this.angle += this.vel * dt;
-    
-    let dcrit = 2 * fact;
-    let zeta = dampfact / dcrit
-    //print(dcrit);
-    return zeta
   }
   
   setAngle() {
