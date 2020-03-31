@@ -27,20 +27,25 @@ let pauseCount = 0
 
 function setup() {
   createCanvas(1000, 600);
+  //create graph on left half of screen
   graph = new Graph(width / 2 + 5, height / 2, width / 2 - 10, 3 * height / 4);
 
+  //create damping slider
   damping = createSlider(0, 10, 0, 0);
   damping.position(10, 10);
   damping.style('width', '200px');
 
+  //create reset button
   reset = createButton('Reset Pendulums');
   reset.mousePressed(startOver);
   reset.position(230, 40);
 
+  //create pause/play button
   playButton = createButton('Play/Pause Simulation');
   playButton.mousePressed(startStop);
   playButton.position(230, 10);
 
+  //set xy of pendulums and initial angle, add pendulums to array
   x = 200;
   y = 50;
   let initAngle = 20;
@@ -53,10 +58,12 @@ function setup() {
 
 function draw() {
   background(0);
-  //frameRate(50);
-  //print(frameRate());
+  //roughly what dt is (assumes 50fps)
+  //in reality fps is usually in 50-60 range
   let dt = 0.02
+  //create graph axes
   graph.build();
+  //if sim is not paused, add time data to xarray
   if (isPlaying) {
     time = (frameCount - pauseCount) * dt
     timeData.push(time);
@@ -64,16 +71,23 @@ function draw() {
       timeData.shift();
     }
   } else {
+    //if it is paused count for how many frames
     pauseCount++
   }
 
+  //get the damp param from slider
   let damp = damping.value()
+  fill(255);
+  text('Damping factor = ' + nf(damp, 1, 2), 20, 40);
+  //loop through pendulums
   for (let i = n - 1; i >= 0; i--) {
+    //show the pendulums
     let p = parray[i];
     p.show();
-    let g = 2000;
+    //calculuate zeta
     let dcrit = 2 * sqrt(p.grav / p.length);
     let zeta = damp / dcrit;
+    //update pendulums if not paused
     if (isPlaying) {
       p.update(damp);
       ydata[i].push(p.angle);
@@ -81,19 +95,20 @@ function draw() {
         ydata[i].shift();
       }
     }
+    //plot the data
     graph.plot(timeData, ydata[i], colors[i])
     fill(colors[i]);
+    //print zeta values by pendulums
     text('Zeta = ' + nf(zeta, 1, 3), 400, y + p.length);
-
   }
 
-  fill(255);
-  text('Damping factor = ' + nf(damp, 1, 2), 20, 40);
-  //print('dt = ',nf(1/fr,1,5),'\n');
-
+  //add pin at top of pendulums
   noStroke();
   fill(255);
-  ellipse(x, y, 5)
+  ellipse(x, y, 5);
+
+  //credit author
+  text('github.com/ervc',10,height-10);
 }
 
 function startStop() {
@@ -101,12 +116,6 @@ function startStop() {
     isPlaying = false;
   } else {
     isPlaying = true;
-    /*for (let i = n - 1; i >= 0; i--) {
-      let p = parray[i];
-      ydata[i] = [];
-    }*/
-    //time = 0;
-    //timeData = [];
   }
 }
 
@@ -117,4 +126,6 @@ function startOver() {
     ydata[i] = [parray[i].angle];
   }
   timeData = []
+  time = 0;
+  pauseCount = 0;
 }

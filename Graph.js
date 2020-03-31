@@ -25,13 +25,14 @@ class Graph {
     this.ydata = yarray;
     this.color = color;
     
+    //set lines to always start at origin (even if time has passed)
     let initTime = this.xdata[0]
     let len = this.xdata.length
     
     push();
     translate(this.x,this.y);
     strokeWeight(1);
-    //draw line
+    //draw lines
     for (let i = 0; i < len - 1; i++) {
       let x1 = map(this.xdata[i] - initTime,0,4,0,this.width);
       let y1 = map(this.ydata[i],-1,1,-width/2,width/2);
