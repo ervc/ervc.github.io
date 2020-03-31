@@ -78,7 +78,7 @@ function draw() {
   //get the damp param from slider
   let damp = damping.value()
   fill(255);
-  text('Damping factor = ' + nf(damp, 1, 2), 20, 40);
+  text('Damping factor = ' + nf(damp, 1, 2) + ' Hz', 20, 40);
   //loop through pendulums
   for (let i = n - 1; i >= 0; i--) {
     //show the pendulums
