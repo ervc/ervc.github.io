@@ -99,7 +99,7 @@ function draw() {
     graph.plot(timeData, ydata[i], colors[i])
     fill(colors[i]);
     //print zeta values by pendulums
-    text('Zeta = ' + nf(zeta, 1, 3), 400, y + p.length);
+    text('Zeta = ' + nf(zeta, 1, 2), 400, y + p.length);
   }
 
   //add pin at top of pendulums
@@ -128,4 +128,5 @@ function startOver() {
   timeData = []
   time = 0;
   pauseCount = 0;
+  isPlaying = false;
 }
