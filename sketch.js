@@ -10,7 +10,7 @@ let damping;
 let reset;
 //pause play button and pause play status
 let playButton;
-let isPlaying = true;
+let isPlaying = false;
 
 //xy position of pendulums
 let x, y;
@@ -57,7 +57,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(50);
   //roughly what dt is (assumes 50fps)
   //in reality fps is usually in 50-60 range
   let dt = 0.02
