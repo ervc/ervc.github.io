@@ -1,132 +1,74 @@
-const n = 5; //number of pendulums
-let initLength = 30; //length of first pendulum (cm)
-let parray = []; //array to hold pendulums
-//colors of pendulums
-let colors = ['red', 'orange', 'yellow', 'green', 'blue'];
-
-//damping parameter slider
-let damping;
-//reset button
-let reset;
-//pause play button and pause play status
-let playButton;
-let isPlaying = false;
-
-//xy position of pendulums
-let x, y;
-
-//global graph
-let graph;
-//data arrays for graphing
-let timeData = [0],
-  ydata = [];
-//time
-let time;
-//count paused frames for graphing
-let pauseCount = 0
+let graphs = [];
+let X = []
+let N = 0;
+let Yvelcos;
+let Yvelsin;
 
 function setup() {
-  createCanvas(1000, 600);
-  //create graph on left half of screen
-  graph = new Graph(width / 2 + 5, height / 2, width / 2 - 10, 3 * height / 4);
-
-  //create damping slider
-  damping = createSlider(0, 10, 0, 0);
-  damping.position(10, 10);
-  damping.style('width', '200px');
-
-  //create reset button
-  reset = createButton('Reset Pendulums');
-  reset.mousePressed(startOver);
-  reset.position(230, 40);
-
-  //create pause/play button
-  playButton = createButton('Play/Pause Simulation');
-  playButton.mousePressed(startStop);
-  playButton.position(230, 10);
-
-  //set xy of pendulums and initial angle, add pendulums to array
-  x = 200;
-  y = 50;
-  let initAngle = 20;
-  for (let i = 0; i < n; i++) {
-    let length = initLength * 2 ** i;
-    parray[i] = new pendulum(x, y, length, initAngle, colors[i])
-    ydata[i] = [parray[i].angle];
+  createCanvas(600, 600);
+  textAlign(CENTER,BOTTOM);
+  for (let i = 0; i < 2; i++) {
+    graphs[i] = new Graph(100,100,width-100,height-100);
+    if (i > 0) {
+      graphs[i].Axes.hide();
+    }
+  }
+  X = linspace(-3,3,1000);
+  let Ycos = X.map(x => taylorCos(PI*x,N));
+  let Ysin = X.map(x => taylorSin(PI*x,N));
+  Yvelcos = X.map(x => 0);
+  Yvelsin = X.map(x => 0);
+  
+  graphs[0].Data.setData(X,Ycos);
+  graphs[0].Data.setColor('red');
+  graphs[1].Data.setData(X,Ysin);
+  graphs[1].Data.setColor('blue');
+  //g.Data.autoScale();
+  
+  for (let g of graphs) {
+    g.Axes.setyRange(-PI,PI);
+    g.Axes.setxRange(-PI,PI);
   }
 }
 
 function draw() {
-  background(50);
-  //roughly what dt is (assumes 50fps)
-  //in reality fps is usually in 50-60 range
-  let dt = 0.02
-  //create graph axes
-  graph.build();
-  //if sim is not paused, add time data to xarray
-  if (isPlaying) {
-    time = (frameCount - pauseCount) * dt
-    timeData.push(time);
-    if (timeData.length > 200) {
-      timeData.shift();
-    }
-  } else {
-    //if it is paused count for how many frames
-    pauseCount++
+  background(0);
+  stroke(255);
+  noFill();
+  
+  graphs[0].Axes.grid();
+  for (let g of graphs) {
+    g.show();
   }
-
-  //get the damp param from slider
-  let damp = damping.value()
+  Yvelcos = graphs[0].Data.moveTo(
+    X.map(x => taylorCos(PI*x,N)),Yvelcos
+  )
+  Yvelsin = graphs[1].Data.moveTo(
+    X.map(x => taylorSin(PI*x,N)),Yvelsin
+  )
+  
   fill(255);
-  text('Damping factor = ' + nf(damp, 1, 2) + ' Hz', 20, 40);
-  //loop through pendulums
-  for (let i = n - 1; i >= 0; i--) {
-    //show the pendulums
-    let p = parray[i];
-    p.show();
-    //calculuate zeta
-    let dcrit = 2 * sqrt(p.grav / p.length);
-    let zeta = damp / dcrit;
-    //update pendulums if not paused
-    if (isPlaying) {
-      p.update(damp);
-      ydata[i].push(p.angle);
-      if (ydata[i].length > 200) {
-        ydata[i].shift();
-      }
-    }
-    //plot the data
-    graph.plot(timeData, ydata[i], colors[i])
-    fill(colors[i]);
-    //print zeta values by pendulums
-    text('Zeta = ' + nf(zeta, 1, 2), 400, y + p.length);
-  }
-
-  //add pin at top of pendulums
-  noStroke();
-  fill(255);
-  ellipse(x, y, 5);
-
-  //credit author
-  text('github.com/ervc',10,height-10);
+  textSize(32);
+  text(`N = ${N}`,width/2,100);
 }
 
-function startStop() {
-  if (isPlaying) {
-    isPlaying = false;
-  } else {
-    isPlaying = true;
+function linspace(min,max,num) {
+  let l = []
+  let di = (max-min)/num
+  for (let i = min; i<=max+di; i+=di) {
+    l.push(i);
   }
+  return l;
 }
 
-function startOver() {
-  for (let i = n - 1; i >= 0; i--) {
-    let p = parray[i];
-    p.setAngle();
-    ydata[i] = [parray[i].angle];
+function keyPressed() {
+  if (keyCode == RIGHT_ARROW) {
+    N++;
   }
-  timeData = []
-  time = 0;
-  pauseCount = 0;
-  isPlaying = false;
+  if (keyCode == LEFT_ARROW) {
+    N--;
+  }
+  if (key == 'r') {
+    N = 0;
+  }
 }
