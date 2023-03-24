@@ -1,0 +1,181 @@
+:root {
+    --color--: #750000;
+}
+
+html {
+/*    margin: 0;*/
+/*    padding: 0;*/
+    position: relative;
+    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 80px;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+h2 {
+    color:var(--color--);
+    font-size: 32px;
+    text-decoration: underline;
+    margin: 0px;
+    padding: 0;
+}
+p {
+    margin-top: 0;
+}
+
+.link {
+    color:blue;
+    text-decoration:underline;
+}
+.paper-link {
+    color: blue;
+    text-decoration: underline;
+    padding: 0;
+    margin: 0;
+}
+.paper-list {
+    margin: 0;
+}
+
+.header {
+/*    border:1px solid var(--color--);*/
+    background-color: var(--color--);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.header .title {
+    color: white;
+    font-size: 26px;
+    margin: auto 20px;
+}
+.header ul {
+    list-style: none;
+    text-align: center;
+}
+.header li {
+    text-decoration: none;
+    display: inline;
+    color: white;
+    font-size: 24;
+    margin: auto 40px;
+}
+
+.current-section {
+/*    border: 1px solid black;*/
+    color: black;
+    background-color: white;
+    padding: 20px 5px;
+}
+
+.footer {
+/*    border:1px solid var(--color--);*/
+    background-color: var(--color--);
+    height:60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    position: absolute;
+}
+.copyright {
+    font-size: 12px;
+    margin: auto 20px;
+}
+.footer ul {
+    list-style: none;
+    text-align: center;
+    margin: auto 20px;
+}
+.footer li {
+    font-size: 12px;
+    display: inline;
+    margin: auto 20px;
+    padding: auto;
+}
+
+.banner {
+    height: 250px;
+    background-position: center center;
+    background-size: cover;
+    bottom: 0;
+    display: flex;
+}
+#main-banner.banner {
+    background-image: url("images/alma_banner.jpg");
+}
+
+.banner-text{
+    text-align: right;
+    color: white;
+    align-self: flex-end;
+}
+.grid-content{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
+/*    grid-template-columns: repeat(2, 1fr);*/
+}
+.grid-cell {
+    display:inline-block;
+    position: relative;
+/*    justify-content: flex-end;*/
+/*    flex-direction: column;*/
+}
+
+.grid-cell p {
+    text-align: justify;
+}
+
+.main-content {
+    margin:auto;
+    margin-bottom: 60px;
+    max-width: 90%; 
+}
+.prof-pic {
+    float: left;
+    width: 300px;
+    max-width: 50%;
+    display: block;
+    margin: 5px 20px 5px 0px;
+    border-radius: 25px;
+}
+#candy-pic {
+    float: right;
+    height: 250px;
+    display: block;
+    margin: 5px 5px 5px 20px;
+    border-radius: 5px;
+}
+#part-pic {
+    float: right;
+    max-height : 50%;
+    display: block;
+    margin: 5px 5px 5px 20px;
+    border-radius: 5px;
+}
+.content-body {
+    text-align: left;
+}
+.content-body p {
+    font-size: 18px;
+}
+.content-photo {
+    max-width: 800px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
