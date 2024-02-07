@@ -27,7 +27,7 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="footer">
-        <p class="copyright">&copy; 2022 Eric Van Clepper</p>
+        <p class="copyright">&copy; 2024 Eric Van Clepper</p>
         <ul>
           <li><a href="https://www.linkedin.com/in/eric-van-camp/">LinkedIn</a></li>
           <li><a href="https://twitter.com/Astro_EVC">Twitter</a></li>

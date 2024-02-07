@@ -37,9 +37,26 @@
                 <p>I received my B.A. from Northwestern University in 2019 where I majored in both Physics and Astronomy as well as Earth and Planetary Sciences. My undergraduate work in the Astronomy department was focused in instrumentation and observation of star formation regions. For my honors thesis, I modeled the expected signal through the half-wave plate for the TolTEC polarimeter at the LMT.
                 </p>
 
-                <p><a href="files/Van_Clepper_CV.pdf" class="link">Click here</a> for my full CV [Updated June 2023]</p>
+                <p><a href="files/Van_Clepper_CV.pdf" class="link">Click here</a> for my full CV [ Updated: 
+                    <script type="text/JavaScript" language="JavaScript">
+                        let lm = document.lastModified;
+                        let date = new Date(lm);
+                        var m = date.getMonth() + 1;
+                        var mmm = 
+                            ( 1==m)?'Jan':( 2==m)?'Feb':(3==m)?'Mar':
+                            ( 4==m)?'Apr':( 5==m)?'May':(6==m)?'Jun':
+                            ( 7==m)?'Jul':( 8==m)?'Aug':(9==m)?'Sep':
+                            (10==m)?'Oct':(11==m)?'Nov':'Dec';
+                        var y = date.getYear();
+                        if (y >= 2000) {y-=2000;}
+                        if (y >= 100)  {y-=100;}
+                        var yyy = 2000+y
+                        document.write(`${mmm} ${yyy}`);
+                    </script>
+                    ]
+                </p>
 
-                <p>Outside of work, I fill my time with lots of hobbies! Whenever the weather is nice enough (which is not often in Chicago), I enjoy running, hiking, and biking outside. Like many geoscience and astronomy grad students, I also enjoy bouldering exploring the chicago food scene. When the weather is not so nice, I can still usually be found outside walking my dog, Gnome, or staying inside with my cat, Ness.
+                <p>Outside of work, I fill my time with lots of hobbies! Whenever the weather is nice enough (which is not often in Chicago), I enjoy running, hiking, and biking outside. Like many geoscience and astronomy grad students, I also enjoy bouldering and exploring the chicago food scene. When the weather is not so nice, I can usually be found inside walking my dog, Gnome, and cat, Ness.
                 </p>
 
                 <p>Want to hear more about my hobbies or research? Contact me at ericvc[at]uchicago[dot]edu
