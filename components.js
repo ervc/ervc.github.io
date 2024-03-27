@@ -11,6 +11,7 @@ class Header extends HTMLElement {
           <li><a href="index.html">HOME</a></li>
           <li><a href="research.html">RESEARCH</a></li>
           <li><a href="software.html">SOFTWARE</a></li>
+          <li><a href="forfun.html">OTHER</a></li>
           </ul>
       </div>
     `;
