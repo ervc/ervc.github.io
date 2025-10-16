@@ -161,6 +161,7 @@ p {
 #part-pic {
     float: right;
     max-height : 50%;
+    max-width: 70%;
     display: block;
     margin: 5px 5px 5px 20px;
     border-radius: 5px;
