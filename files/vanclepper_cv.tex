@@ -1,0 +1,290 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage[
+    pdfauthor={Eric Van Clepper},
+    pdftitle={Van Clepper Research Statement},
+    hidelinks]{hyperref}
+\usepackage{amsmath, amssymb}
+\usepackage{array}
+\newcommand{\link}[1]{{\color{blue}\href{#1}{#1}}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}} % for md conversion
+
+\newcommand{\note}[1]{\textcolor{blue}{#1}}
+
+\usepackage[margin=0.7in,headsep=0.2in]{geometry}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyfoot[R]{CV \textbar{} \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% tighten up list environment
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+% \renewcommand{\labelitemi}{\raisebox{0.15em}{\tiny$\bullet$}}
+\renewcommand{\labelitemi}{-}
+
+% section info
+\titleformat{\section}
+    {\normalfont\bfseries} % formatting
+    {}{0em}{\centering} % section number, spacing, code before text
+\titleformat{\subsection}
+    {\normalfont\slshape}
+    {}{0em}{\centering}
+\titlespacing*{\section} % command
+{0em}{0.5em}{0em} % left, before, after
+\titlespacing*{\subsection}
+{0em}{0.5em}{0em}
+
+\begin{document}
+
+\begin{center}
+    \textbf{Eric R. Van Clepper}
+\end{center}
+
+\noindent\textbf{\underline{Contact Information}}
+
+\noindent
+Wisconsin Center for Origins Research (WiCOR) \\
+University of Wisconsin-Madison \\
+vanclepper@wisc.edu \\
+\link{ericvc.com}
+
+\vspace{1em}
+\noindent\textbf{\underline{ORCID}}
+
+\noindent
+{\color{blue}\href{https://orcid.org/0000-0002-5954-6302}{0000-0002-5954-6302}}
+
+\vspace{1em}
+\noindent\textbf{\underline{Education}}
+
+\noindent
+\begin{tabular}{p{0.8in} p{5.2in}}
+    2020 - 2026 & Ph.D. in Geophysical Sciences, University of Chicago,
+    Chicago, IL  \\
+     &  \emph{Thesis Topic: Coupled Chemistry and Dynamics in Protoplanetary Disks} \\
+     &  \emph{Advisor: Fred Ciesla} \\
+    2015 - 2019 & BA \textit{cum laude} Astronomy \& Planetary Science with Honors,
+    Northwestern University, Evanston, IL \\
+     & \emph{Advisor: Giles Novak}
+\end{tabular}
+
+\vspace{1em}
+\noindent\textbf{\underline{Employment}}
+
+\noindent
+\begin{tabular}{p{0.8in} p{5.2in}}
+    2026 -      & WiCOR Postdoctoral Fellow, University of Wisconsin-Madison,
+    Madison, WI \\
+    2020 - 2026 & Research and Teaching Assistant, University of Chicago, Chicago, IL
+    \\
+    2019 - 2020 & N'Cat Tutor, Northwestern University, Evanston, IL \\
+    %  &  \emph{Lead one-on-one and group tutoring sessions for undergraduate students in introductory and advanced Math, Physics, and Earth Sciences courses.} \\
+    2017 - 2019 & Undergraduate Research Assistant, Northwestern University,
+    Evanston, IL \\
+    %  &  \emph{Built sun sensor box for the BLAST-TNG. Modeled expected output of Half-Waveplate Sensor for TolTEC camera on LMT. Calibrated pointing on new HAWC+ observations of OMC star forming region.} \\
+\end{tabular}
+
+\vspace{1em}
+\noindent\textbf{\underline{Selected Grants}}
+
+\noindent
+\begin{tabular}{l@{ }c@{ }ll}
+    Oct 2023  &-& Oct 2026 &  NASA FINESST \\
+    Sept 2020 &-& Sept 2022 &  McCormick Fellowship \\
+    June 2018 &-& Sept 2018  & Northwestern Weinberg Research Grant \\
+    June 2018 &-& Sept 2018  & NASA ISG Summer Research Grant \\
+    June 2017 &-& Sept 2017  & NASA ISG Summer Research Grant \\
+\end{tabular}
+
+\vspace{1em}
+\noindent\textbf{\underline{Conference Presentations}}
+
+\noindent
+\begin{tabular}{ll}
+August 2024 & Goldschmidt Conference, Chicago  \\
+January 2024 & FARGO3D 1st Workshop, Santiago, Chile  \\
+August 2023 & Meteoritical Society, 86th Annual Meeting, Los Angeles  \\
+July 2023 & Kavli-IAU Astrochemistry Symposium, Astrochemistry VIII, Traverse City  \\
+August 2021 & Meteoritical Society, 84th Annual Meeting, Chicago \\
+\end{tabular}
+
+\vspace{1em}
+\noindent\textbf{\underline{Poster Presentations}}
+
+\noindent
+\begin{tabular}{ll}
+September 2026 & Origins of Life, Origin Federation Conference  \\
+October 2025 & Solar System in Context, NOIRLab  \\
+September 2025 & Origins of Life, Origin Federation Conference  \\
+June 2025 & Origins of Solar Systems, Gordon Research Conference  \\
+July 2024 & New Heights in Planet Formation, ESO Dust Busters  \\
+June 2023 & Origins of Solar Systems, Gordon Research Conference  \\
+August 2022 & Emerging Researchers in Exoplanet Sciences VII \\ 
+\end{tabular}
+
+\vspace{1em}
+\pagebreak
+\noindent\textbf{\underline{Software Development}}
+
+\noindent
+\begin{tabular}{m{1.0in} m{5.0in}}
+    \texttt{CANDY} & \link{https://github.com/ervc/newcandy} \\
+\end{tabular}
+
+\underline{C}hemistry \underline{AN}d \underline{DY}namics, coupled
+astrochemistry and dust evolution for
+self-consistent modeling of chemical composition during planetesimal formation.
+
+\noindent
+\begin{tabular}{m{1.0in} m{5.0in}}
+    \texttt{ParTrace} & \link{https://github.com/ervc/cpartrace} \\
+\end{tabular}
+
+Particle Tracking algorithm to track trajectories of tracer particles in 3D
+Hydrodynamic disk simulations, accounting for gas drag with 3D flows around
+embedded planets.
+
+% \vspace{1em}
+% \noindent\textit{\underline{Skills:}}
+% Python, Fortran, C, C++, NumPy, Pandas, SciPy, MPI, OpenMP, GPU acceleration.
+
+\vspace{1em}
+\noindent\textbf{\underline{Professional Activities}}
+
+\begin{itemize}
+    \item Executive Officer for NASA Review Panel.
+    \item Peer Reviewer for \textit{The Astrophysical Journal}.
+\end{itemize}
+
+\noindent\textit{\underline{Departmental Service}}
+
+\noindent
+\begin{tabular}{m{1.0in} m{5.0in}}
+    2024	&	Lead TA for intro to coding Bootcamp for incoming students \\
+    2024 -	2025 &	Graduate Union Steward for the Department of Geophysical
+    Sciences \\
+    2023	&	Co-organizer of University of Chicago Graduate Research Expo \\
+    2022 - 2023	&Co-organizer of University of Chicago Exoplanet Journal Club \\
+\end{tabular}
+
+\noindent\textit{\underline{Outreach}}
+
+\noindent
+\begin{tabular}{m{1.0in} m{5.0in}}
+    Nov 18,	2025 &Meet a Scientist grad student life panel, College of the South
+    \\
+    July 23, 2025 	&Guest Lecture on planet formation for UChicago summer class
+    ASTR11901 \\
+    Nov 14, 2023 	&Planetary science and grad student life panel, College of the
+    South \\
+    Nov 21, 2022 	&Planetary science and grad student life panel, College of the
+    South \\
+\end{tabular}
+
+\noindent\textit{\underline{Courses Taught}}
+
+\noindent As TA at University of Chicago
+
+\noindent
+\begin{tabular}{m{1.0in} m{1.0in} m{4.0in}}
+    Winter 2025 & PHSC 13600 & Natural Hazards \\
+    Spring 2024 & GEOS 21200 & Physics of the Earth \\
+    Autumn 2021 & PHSC 10800 & Earth as a Planet: Exploring our Place in the Universe \\
+    Winter 2021 & PHSC 10100 & Origin and Evolution of the Solar System and the Earth \\
+\end{tabular}
+
+\vspace{1em}
+\noindent\textbf{\underline{Publications}}
+
+\noindent\textit{\underline{First Author Publications}}
+
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Van Clepper, E. R., E. Bergin, F. Alarc\'on, and F. Ciesla. 2025. ``Dust Recycling
+and Icy Volatile Enhancement (DRIVE): A Novel Method of Volatile Enrichment in Cold
+Giant Planets.'' \textit{The Astrophysical Journal Letters} 994: L44. 
+\link{https://doi.org/10.3847/2041-8213/ae1d81}
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Van Clepper, E., E. Price, and F. J. Ciesla. 2025. “Three-Dimensional
+Transport of Solids in a Protoplanetary Disk Containing a Growing Giant Planet.”
+\textit{The Astrophysical Journal} 980: 201. \\ 
+\link{https://doi.org/10.3847/1538-4357/ada8a4}.
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Van Clepper, E., J. B. Bergner, A. D. Bosman, E. Bergin, and F.
+J. Ciesla. 2022. “Chemical Feedback of Pebble Growth: Impacts on CO Depletion
+and C/O Ratios.” \textit{The Astrophysical Journal} 927 (2): 206. \\
+\link{https://doi.org/10.3847/1538-4357/ac511b}.
+
+\vspace{0.5em}
+\noindent\textit{\underline{Other Publications}}
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Ciesla, F. J., E. Van Clepper, J. Bergner, and E. Bergin. 2025. ``Oxygen Isotope
+Constraints on the Importance of Photochemical Processing in Protoplanetary
+Disks.'' \textit{The Astronomical Journal, In Press}.
+\link{https://arxiv.org/pdf/2512.04944}
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Price, E. M., E. Van Clepper, and F. J. Ciesla. 2025. “Dynamics of Small,
+Constant-Size Particles in a Protoplanetary Disk with an Embedded Protoplanet.”
+\textit{The Astrophysical Journal} 979 (1): 37.
+\link{https://doi.org/10.3847/1538-4357/ad9f35}.
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Seligman, D. Z., L. A. Rogers, S. H. C. Cabot, et al. incl. E. Van Clepper. 2022. “The
+Volatile Carbon-to-Oxygen Ratio as a Tracer for the Formation Locations of
+Interstellar Comets.” \textit{The Planetary Science Journal} 3 (7): 150.
+\link{https://doi.org/10.3847/PSJ/ac75b5}.
+
+\pagebreak
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Santos, F. P., D. T. Chuss, C. D. Dowell, et al. incl. E. Van Camp.* 2019. “The
+Far-Infrared Polarization Spectrum of $\rho$ Ophiuchi A from HAWC+/SOFIA
+Observations.” \textit{The Astrophysical Journal} 882 (2): 113.
+\link{https://doi.org/10.3847/1538-4357/ab3407}.
+
+\noindent
+\hangindent=2em
+\hangafter=1
+Chuss, D. T., B-G Andersson, J. Bally, et al. incl. E. Van Camp.* 2019. “HAWC+/SOFIA
+Multiwavelength Polarimetric Observations of OMC-1.” The Astrophysical Journal
+872 (2): 187. \\
+\link{https://doi.org/10.3847/1538-4357/aafd37}.
+
+\noindent\textit{*Name Change from Eric Van Camp to Eric Van Clepper in 2021}
+
+% \vspace{0.5em}
+% \noindent\textit{\underline{Works in Review}}
+
+% \noindent
+% \hangindent=2em
+% \hangafter=1
+% Kerraouch, I., A. Bischoff, A. Krot, et al. incl. Eric Van Clepper. 2025.
+% ``Extreme isotopic anomalies in chondritic clasts challenge inner disk's secular
+% evolution.'' \textit{In Review at Science Advances}.
+
+\end{document}

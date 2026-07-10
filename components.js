@@ -6,11 +6,12 @@ class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="header">
-        <p class="title">Eric Van Clepper</p>
+        <p class="title"><a href="index.html">Eric Van Clepper</a></p>
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="research.html">RESEARCH</a></li>
           <li><a href="software.html">SOFTWARE</a></li>
+          <li><a href="files/vanclepper_cv.pdf">CV</a></li>
           <li><a href="forfun.html">OTHER</a></li>
           </ul>
       </div>
@@ -28,7 +29,7 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="footer">
-        <p class="copyright">&copy; 2025 Eric Van Clepper</p>
+        <p class="copyright">&copy; 2026 Eric Van Clepper</p>
         <ul>
           <li><a href="https://www.linkedin.com/in/eric-van-camp/">LinkedIn</a></li>
           <li><a href="https://github.com/ervc">GitHub</a></li>

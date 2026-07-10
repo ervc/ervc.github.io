@@ -1,5 +1,6 @@
 :root {
-    --color--: #750000;
+    --color--: #C5050C;
+    --darkcolor--: #9B0000;
 }
 
 html {
@@ -22,10 +23,16 @@ h1 {
     font-size: 36px;
 }
 h2 {
-    color:var(--color--);
+    color:var(--darkcolor--);
     font-size: 32px;
     text-decoration: underline;
     margin: 0px;
+    padding: 0;
+}
+h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: -20px;
     padding: 0;
 }
 p {
@@ -165,6 +172,11 @@ p {
     display: block;
     margin: 5px 5px 5px 20px;
     border-radius: 5px;
+}
+#drive-pic {
+    float: right;
+    max-height: 50%;
+    max-width: 70%
 }
 .content-body {
     text-align: left;
