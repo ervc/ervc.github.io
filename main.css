@@ -1,5 +1,7 @@
 :root {
-    --color--: #C5050C;
+    /* Badger Red: #C5050C */
+    /* Darker Red: #9B0000 */
+    --color--: #9B0000;
     --darkcolor--: #9B0000;
 }
 
