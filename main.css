@@ -29,6 +29,7 @@ h2 {
     font-size: 32px;
     text-decoration: underline;
     margin: 0px;
+    margin-left: 10px;
     padding: 0;
 }
 h3 {
@@ -131,13 +132,13 @@ p {
     align-self: flex-end;
 }
 .grid-content{
-    display: grid;
+    display: inline-block;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr)); */
 /*    grid-template-columns: repeat(2, 1fr);*/
 }
 .grid-cell {
-    display:inline-block;
+    display: inline-block;
     position: relative;
 /*    justify-content: flex-end;*/
 /*    flex-direction: column;*/
@@ -161,16 +162,17 @@ p {
     border-radius: 25px;
 }
 #candy-pic {
-    float: right;
-    height: 250px;
+    float: left;
+    max-width: 50%;
+    max-height: 350px;
     display: block;
     margin: 5px 5px 5px 20px;
     border-radius: 5px;
 }
 #part-pic {
     float: right;
-    max-height : 50%;
-    max-width: 70%;
+    max-height : 500px;
+    max-width: 50%;
     display: block;
     margin: 5px 5px 5px 20px;
     border-radius: 5px;
